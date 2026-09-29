@@ -1,5 +1,6 @@
 package mx.tec.tareas.ui.screens
 
+import mx.tec.tareas.ui.state.AppViewModelProvider
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,8 +33,7 @@ import mx.tec.tareas.ui.theme.TareasTheme
 
 /** Con estado: crea su ViewModel. */
 @Composable
-fun PantallaTareas(vm: TareasViewModel = viewModel()) {
-    ListaTareas(
+fun PantallaTareas(vm: TareasViewModel = viewModel(factory = AppViewModelProvider.Factory)) {    ListaTareas(
         tareas = vm.tareas,
         cargando = vm.cargando,
         onRecargar = { vm.cargar() }
@@ -69,6 +69,7 @@ fun ListaTareas(
         }
     }
 }
+
 
 @Composable
 private fun Encabezado(pendientes: Int, cargando: Boolean, onRecargar: () -> Unit) {
