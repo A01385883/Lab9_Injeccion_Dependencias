@@ -1,0 +1,26 @@
+Ejercicio A2
+
+Con el starter abierto, y sin editar ApiRemota: ¿Qué archivos tocarías para que la app muestre solo «Tarea de prueba»? ¿Y cómo regresarías a los datos reales? Escríbelo en la bitácora, en dos o tres frases.
+
+
+Se debe modificar los archivos que llaman a las APIs que se maneja o al viewmodel, borrando la llamada y colocando el problema fijo, evitando que ambas llamadas fija y a la API coexistan.
+
+
+Ejercicio E1
+
+En la prueba no solo se cambio solo 1 archivo, sino que una sola linea en el RepositorioModule, en el starter se tendría que cambiar toda la llamada de la API mas el viewModel que se tiene, ya que esperarían tener algo cuando no queremos que realmente reciban algo, y en este caso no se enteraron porque no se ocuparon crear, así que estos se mantienen deshabilitados
+
+
+Ejercicio E2
+
+¿Qué es inyección de dependencias?
+
+Es el manejo de apps de manera que recibe los elementos que se ocupan para crear la app por otras tareas que se deben manejar para cada elemento en vez de crearlos todos por la misma app
+
+¿Para qué sirve la interfaz TareasRepository?
+
+En este caso es el que nos ayuda a decidir que elementos (O dependencias) son las que se deben crear dentro de nuestra aplicación, y cuales en este caso son innecesarias
+
+¿Qué hace @Binds en un módulo de Hilt?
+
+Este es el que sabe como llamar a una clase / formato que Hilt ya sabe construir desde antes (Porque andamos con cafeteras, se puede decir que binds es quien sabe como hacer que la cafetera reciba energía eléctrica)
