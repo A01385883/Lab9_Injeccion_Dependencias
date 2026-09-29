@@ -1,6 +1,5 @@
 package mx.tec.tareas.ui.screens
 
-import mx.tec.tareas.ui.state.AppViewModelProvider
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,7 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import mx.tec.tareas.domain.Tarea
 import mx.tec.tareas.ui.components.TarjetaTarea
 import mx.tec.tareas.ui.state.TareasViewModel
@@ -33,7 +32,7 @@ import mx.tec.tareas.ui.theme.TareasTheme
 
 /** Con estado: crea su ViewModel. */
 @Composable
-fun PantallaTareas(vm: TareasViewModel = viewModel(factory = AppViewModelProvider.Factory)) {    ListaTareas(
+fun PantallaTareas(vm: TareasViewModel = hiltViewModel()) {    ListaTareas(
         tareas = vm.tareas,
         cargando = vm.cargando,
         onRecargar = { vm.cargar() }
